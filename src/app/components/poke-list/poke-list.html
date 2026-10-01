@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Regional Favorites Showcase</h2>
+
+  @if (selectedFav()) {
+    <div class="toast">
+      🌟 You selected <strong>{{ selectedFav() }}</strong>!
+    </div>
+  }
+
+  <section>
+    <h3>Kanto Region</h3>
+    <div class="grid">
+      @for (poke of pokemonService.kantoPokemon(); track poke.id) {
+        <app-poke-card 
+          [pokemon]="poke" 
+          (selectFavorite)="handleFavorite($event)" 
+        />
+      }
+    </div>
+  </section>
+
+  <section>
+    <h3>Johto Region</h3>
+    <div class="grid">
+      @for (poke of pokemonService.johtoPokemon(); track poke.id) {
+        <app-poke-card 
+          [pokemon]="poke" 
+          (selectFavorite)="handleFavorite($event)" 
+        />
+      }
+    </div>
+  </section>
+
+  <section>
+    <h3>Hoenn Region</h3>
+    <div class="grid">
+      @for (poke of pokemonService.hoennPokemon(); track poke.id) {
+        <app-poke-card 
+          [pokemon]="poke" 
+          (selectFavorite)="handleFavorite($event)" 
+        />
+      }
+    </div>
+  </section>
+</div>

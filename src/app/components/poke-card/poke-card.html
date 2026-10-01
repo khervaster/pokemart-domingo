@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="pokemon-name">{{ pokemon().name }}</h3>
+  </div>
+
+  <div class="card-body">
+    <p class="info-line">
+      <strong class="label">Type: </strong> 
+      <span class="value">{{ pokemon().type }}</span>
+    </p>
+
+    <p class="info-line">
+      <strong class="label">Held Item: </strong> 
+      <span class="value">{{ pokemon().heldItem }}</span>
+    </p>
+
+    <p class="description">{{ pokemon().description }}</p>
+  </div>
+
+  <div class="card-footer">
+    <button class="fav-btn" (click)="onFavoriteClick()">⭐ Select as Favorite</button>
+  </div>
+</div>

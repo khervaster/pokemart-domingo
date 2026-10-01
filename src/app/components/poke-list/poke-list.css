@@ -1,0 +1,43 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center; /* Centers main and section headings */
+}
+
+.container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  /* Centered flex-like grid for any number of cards */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center; 
+  gap: 1.5rem;
+}
+
+.toast {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}

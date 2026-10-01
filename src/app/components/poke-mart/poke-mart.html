@@ -1,0 +1,54 @@
+<div class="mart-layout">
+  <!-- Catalog Section -->
+  <div class="catalog">
+    <h2 class="section-title">PokéMart Catalog</h2>
+    
+    <div class="grid">
+      @for (item of martService.martItems(); track item.id) {
+        <div class="item-card">
+          <h4 class="item-name">{{ item.name }}</h4>
+          <span class="category-badge">{{ item.category }}</span>
+          <p class="price-tag">₱{{ item.price }}</p>
+          <button class="add-btn" (click)="martService.addToCart(item)">
+            + Add to Cart
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Sticky Shopping Cart Panel -->
+  <div class="cart-panel">
+    <h3 class="cart-title">🛒 Shopping Cart</h3>
+    
+    <div class="cart-items-list">
+      @for (item of martService.cart(); track $index) {
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <span class="cart-item-name">{{ item.name }}</span>
+          </div>
+          <div class="cart-item-action">
+            <span class="cart-item-price">₱{{ item.price }}</span>
+            <button class="remove-btn" (click)="martService.removeFromCart($index)" title="Remove item">❌</button>
+          </div>
+        </div>
+      } @empty {
+        <p class="empty-msg">Your PokéMart cart is empty.</p>
+      }
+    </div>
+
+    <div class="cart-summary">
+      <hr />
+      <div class="total-row">
+        <span>Total Amount:</span>
+        <strong class="total-price">₱{{ martService.totalPrice() }}</strong>
+      </div>
+      <button 
+        class="checkout-btn" 
+        [disabled]="martService.cart().length === 0"
+        (click)="martService.clearCart()">
+        Checkout / Clear Cart
+      </button>
+    </div>
+  </div>
+</div>

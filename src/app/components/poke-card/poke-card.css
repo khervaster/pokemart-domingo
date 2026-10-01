@@ -1,0 +1,88 @@
+.card {
+  background-color: #ffffff;
+  color: #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 6px solid #2563eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pokemon-name {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.card-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Inline flex display keeps label and value side by side on one line */
+.info-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-line .label {
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.info-line .value {
+  font-weight: 400;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.description {
+  font-style: italic;
+  color: #3f4630;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fav-btn {
+  background-color: #fef08a;
+  color: #854d0e;
+  border: 1px solid #fde047;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fav-btn:hover {
+  background-color: #fde047;
+  color: #713f12;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
